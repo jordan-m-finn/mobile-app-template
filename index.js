@@ -23,10 +23,15 @@ function renderItems() {
         menuArray.forEach(item => {
             const li = document.createElement('li')
             li.innerHTML = `
-            ${item.name} - $${item.price.toFixed(2)}
-            <span class="emoji">${item.emoji}</span>
-            <p>${item.ingredients}</p>
-            <button data-id="${item.id}">+</button>
+                <div class="item-left">
+                    <span class="emoji">${item.emoji}</span>
+                </div>
+                <div class="item-content">
+                    <span class="">${item.name}</span>
+                    <p class="ingredients">${item.ingredients}</p>
+                    <span class="price"><strong>$${item.price}</strong></span>
+                <div>
+                <button data-id="${item.id}">+</button>
             `
             listings.appendChild(li)
         })
